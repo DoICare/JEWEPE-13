@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Mockup - Laporan</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; display: flex; height: 100vh; background: #fff; color: #000; }
+        
+        /* Layout Sidebar (Konsisten) */
+        .sidebar { width: 250px; border-right: 2px solid #000; display: flex; flex-direction: column; }
+        .sidebar-header { padding: 20px; text-align: center; border-bottom: 2px solid #000; font-weight: bold; font-size: 20px; }
+        .menu { list-style: none; padding: 0; margin: 0; flex: 1; }
+        .menu li { border-bottom: 1px solid #000; }
+        .menu li a { display: block; padding: 15px 20px; text-decoration: none; color: #000; font-weight: bold; }
+        .menu li.active { background: #000; }
+        .menu li.active a { color: #fff; }
+        
+        /* Layout Konten Utama */
+        .main-content { flex: 1; display: flex; flex-direction: column; background: #f9f9f9; }
+        .topbar { padding: 15px 20px; border-bottom: 2px solid #000; display: flex; justify-content: space-between; font-weight: bold; background: #fff; }
+        .content { padding: 20px; }
+        
+        /* Elemen Spesifik Laporan */
+        .filter-box { border: 2px solid #000; background: #fff; padding: 20px; margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-end; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+        .form-group input, .form-group select { padding: 8px; border: 2px solid #000; outline: none; }
+        
+        .btn-filter { background: #000; color: #fff; border: 2px solid #000; padding: 9px 15px; font-weight: bold; cursor: pointer; }
+        .btn-print { background: #fff; color: #000; border: 2px solid #000; padding: 9px 15px; font-weight: bold; cursor: pointer; margin-left: auto; }
+        
+        table { width: 100%; border-collapse: collapse; border: 2px solid #000; background: #fff; }
+        th, td { border: 1px solid #000; padding: 12px; text-align: left; }
+        th { background: #eee; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">JEWEPE INVENTORY</div>
+        <ul class="menu">
+            <li><a href="#">[ ] Dashboard</a></li>
+            <li><a href="#">[ ] Persediaan Barang</a></li>
+            <li><a href="#">[ ] Master Data</a></li>
+            <li class="active"><a href="#">[ ] Laporan</a></li>
+            <li style="margin-top: 50px;"><a href="#">[<-] Logout</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="topbar">
+            <div>Halaman: Cetak Laporan</div>
+            <div>Admin: Rizky Maulana</div>
+        </div>
+        <div class="content">
+            <h2 style="margin-top: 0;">Laporan Transaksi & Persediaan</h2>
+            
+            <div class="filter-box">
+                <div class="form-group">
+                    <label>Mulai Tanggal</label>
+                    <input type="text" value="01/06/2026" style="width: 120px;">
+                </div>
+                <div class="form-group">
+                    <label>Sampai Tanggal</label>
+                    <input type="text" value="03/06/2026" style="width: 120px;">
+                </div>
+                <div class="form-group">
+                    <label>Jenis Laporan</label>
+                    <select>
+                        <option>Semua Transaksi</option>
+                        <option>Barang Masuk</option>
+                        <option>Barang Keluar</option>
+                    </select>
+                </div>
+                <button class="btn-filter">TAMPILKAN</button>
+                <button class="btn-print">[ # ] CETAK LAPORAN (PDF)</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Tanggal</th>
+                        <th>Jenis Transaksi</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td><td>01/06/2026</td><td>Masuk</td><td>BRG-01</td><td>Semen Tiga Roda 50Kg</td><td>+50</td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>02/06/2026</td><td>Keluar</td><td>BRG-02</td><td>Besi Beton 10mm</td><td>-20</td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>03/06/2026</td><td>Keluar</td><td>BRG-01</td><td>Semen Tiga Roda 50Kg</td><td>-5</td>
+                    </tr>
+                    <tr>
+                        <td>[ ... ]</td><td>[ ... ]</td><td>[ ... ]</td><td>[ ... ]</td><td>[ ... ]</td><td>[ ... ]</td>
+                    </tr>
+                </tbody>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Mockup - Master Data</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; display: flex; height: 100vh; background: #fff; color: #000; }
+        .sidebar { width: 250px; border-right: 2px solid #000; display: flex; flex-direction: column; }
+        .sidebar-header { padding: 20px; text-align: center; border-bottom: 2px solid #000; font-weight: bold; font-size: 20px; }
+        .menu { list-style: none; padding: 0; margin: 0; flex: 1; }
+        .menu li { border-bottom: 1px solid #000; }
+        .menu li a { display: block; padding: 15px 20px; text-decoration: none; color: #000; font-weight: bold; }
+        .menu li.active { background: #000; }
+        .menu li.active a { color: #fff; }
+        .main-content { flex: 1; display: flex; flex-direction: column; background: #f9f9f9; }
+        .topbar { padding: 15px 20px; border-bottom: 2px solid #000; display: flex; justify-content: space-between; font-weight: bold; background: #fff; }
+        .content { padding: 20px; }
+        
+        .action-bar { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .btn-add { border: 2px solid #000; background: #fff; padding: 8px 15px; font-weight: bold; cursor: pointer; }
+        .search-box { border: 2px solid #000; padding: 8px; width: 250px; outline: none; }
+        
+        table { width: 100%; border-collapse: collapse; border: 2px solid #000; background: #fff; }
+        th, td { border: 1px solid #000; padding: 12px; text-align: left; }
+        th { background: #eee; font-weight: bold; }
+        .action-links { text-decoration: underline; cursor: pointer; font-weight: bold; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">JEWEPE INVENTORY</div>
+        <ul class="menu">
+            <li><a href="#">[ ] Dashboard</a></li>
+            <li><a href="#">[ ] Persediaan Barang</a></li>
+            <li class="active"><a href="#">[ ] Master Data</a></li>
+            <li><a href="#">[ ] Laporan</a></li>
+            <li style="margin-top: 50px;"><a href="#">[<-] Logout</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="topbar">
+            <div>Halaman: Daftar Barang</div>
+            <div>Admin: Rizky Maulana</div>
+        </div>
+        <div class="content">
+            <h2 style="margin-top: 0;">Kelola Daftar Barang</h2>
+            
+            <div class="action-bar">
+                <button class="btn-add">+ TAMBAH BARANG BARU</button>
+                <input type="text" class="search-box" placeholder="Cari barang...">
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Nama Barang</th>
+                        <th>Kategori</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BRG-01</td><td>Semen Tiga Roda 50Kg</td><td>Material</td>
+                        <td>
+                            <span class="action-links">Detail</span> | 
+                            <span class="action-links">Edit</span> | 
+                            <span class="action-links">Hapus</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BRG-02</td><td>Besi Beton 10mm</td><td>Logam</td>
+                        <td>
+                            <span class="action-links">Detail</span> | 
+                            <span class="action-links">Edit</span> | 
+                            <span class="action-links">Hapus</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
